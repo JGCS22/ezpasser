@@ -23,29 +23,29 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className="flex flex-col gap-y-1 h-lvh w-full px-20 py-10 font-[family-name:var(--font-geist-sans)]">
-        <div className="flex flex-row items-center justify-end gap-x-5 h-1/6 min-h-20 max-w-full">
-          <div className="flex mr-auto">
-            <Link href={"/"}>
-              <LogoButton/>
-            </Link>
-          </div>
-          <div className="flex gap-x-5">
-            <Link href={"/settings"}>
-              <OutlinedButton onClick={handleClick} text="SETTINGS" />
-            </Link>
-            <Link href={"/login"}>
-              <OutlinedButton onClick={handleClick} text="LOGIN" />
-            </Link>
-          </div>
+    <body className="flex flex-col gap-y-1 h-lvh w-full px-20 py-10 font-[family-name:var(--font-geist-sans)]">
+      <div className="fixed flex items-center bg-black top-0 left-0 right-0 text-white">
+        <div className="flex mr-auto justify-center">
+          <Link href={"/"}>
+            <LogoButton/>
+          </Link>
         </div>
-        <div className=" bg-red-500 h-max grow">
-            {children}
+        <div className="flex gap-x-5">
+          <Link href={"/settings"}>
+            <OutlinedButton onClick={handleClick} text="SETTINGS" />
+          </Link>
+          <Link href={"/login"}>
+            <OutlinedButton onClick={handleClick} text="LOGIN" />
+          </Link>
         </div>
-        <div className="bg-yellow-400 h-20 min-h-20">
-          <p>footer</p>
-        </div>
-      </body>
-    </html>
+      </div>
+      <main className=" bg-red-500 h-max grow">
+        {children}
+      </main>
+      <div className="bg-yellow-400 h-20 min-h-20">
+        <p>footer</p>
+      </div>
+    </body>
+   </html>
   );
 }
